@@ -1,4 +1,6 @@
-/* ===== Layout ===== */
+/* ============================================================
+   FORM STYLES
+============================================================ */
 .page-container {
   min-height: 100vh;
   display: flex;
@@ -8,7 +10,6 @@
   padding: 20px;
 }
 
-/* ===== Form Box ===== */
 .form-container {
   background: #ffffff;
   width: 380px;
@@ -18,7 +19,6 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-/* ===== Title ===== */
 .form-title {
   text-align: center;
   margin-bottom: 22px;
@@ -27,12 +27,10 @@
   color: #222;
 }
 
-/* ===== Form Group ===== */
 .form-group {
   margin-bottom: 15px;
 }
 
-/* ===== Labels ===== */
 .form-label {
   display: block;
   font-size: 14px;
@@ -41,7 +39,6 @@
   color: #333;
 }
 
-/* ===== Input & Select ===== */
 .form-input,
 .form-select {
   width: 100%;
@@ -59,7 +56,6 @@
   border-color: #6366f1;
 }
 
-/* ===== Button ===== */
 .form-button {
   width: 100%;
   padding: 12px;
@@ -77,7 +73,6 @@
   background: #4f46e5;
 }
 
-/* ===== Footer Text & Link ===== */
 .form-footer {
   text-align: center;
   margin-top: 12px;
@@ -95,16 +90,18 @@
   text-decoration: underline;
 }
 
-@media (max-width: 480px) {
-  .form-container {
-    width: 100%;
-    padding: 20px;
-  }
-}
+/* ============================================================
+   CART ICON
+============================================================ */
 .cart-icon {
   position: relative;
   cursor: pointer;
   display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
 }
 
 .cart-icon-svg {
@@ -115,14 +112,18 @@
 
 .cart-badge {
   position: absolute;
-  top: -5px;
-  right: -10px;
+  top: -6px;
+  right: -6px;
   background-color: red;
   color: white;
   font-size: 12px;
   border-radius: 50%;
   padding: 2px 6px;
 }
+
+/* ============================================================
+   PRODUCT GRID
+============================================================ */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -175,7 +176,10 @@
 .product-card button:hover {
   background: #0056b3;
 }
-/* Footer Container */
+
+/* ============================================================
+   FOOTER
+============================================================ */
 .footer {
   background-color: #111;
   color: #fff;
@@ -184,7 +188,6 @@
   width: 100%;
 }
 
-/* Footer Content Layout */
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -195,7 +198,6 @@
   flex-wrap: wrap;
 }
 
-/* Left Section */
 .footer-left h3 {
   font-size: 24px;
   font-weight: 600;
@@ -207,7 +209,6 @@
   color: #ccc;
 }
 
-/* Links Section */
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -225,7 +226,6 @@
   color: #00aaff;
 }
 
-/* Bottom Bar */
 .footer-bottom {
   text-align: center;
   padding-top: 15px;
@@ -238,65 +238,132 @@
   color: #bbb;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px
-  }}
-  /* Header Main Container */
+/* ============================================================
+   HEADER
+============================================================ */
 .header {
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #e2e2e2;
   padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e4e4e4;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* Inner Flex Layout */
 .header-content {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-/* Left Logo */
-.header-content .logo {
-  font-size: 24px;
+.logo {
+  font-size: 26px;
   font-weight: 700;
-  color: #111;
-  letter-spacing: 1px;
+  color: #333;
+  cursor: pointer;
 }
 
-/* Right Side Action Buttons (Cart + Profile) */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Cart Icon Hover Effect */
-.header-actions .cart-icon {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.header-actions .cart-icon:hover {
-  transform: scale(1.1);
-}
-
-/* Profile Dropdown Container */
-.header-actions .profile-dropdown {
-  cursor: pointer;
+/* ============================================================
+   PROFILE DROPDOWN
+============================================================ */
+.profile-dropdown {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-/* Responsive Header */
+.profile-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.profile-button:hover {
+  background: #f2f2f2;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 180px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease-in-out;
+  z-index: 999;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  padding: 10px 16px;
+  font-size: 15px;
+  text-align: left;
+  color: #333;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-menu button:last-child {
+  color: #ff5252;
+}
+
+.dropdown-menu button:last-child:hover {
+  background: #ffe5e5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: row;
@@ -305,5 +372,18 @@
 
   .header-actions {
     gap: 15px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%;
+    padding: 20px;
   }
 }

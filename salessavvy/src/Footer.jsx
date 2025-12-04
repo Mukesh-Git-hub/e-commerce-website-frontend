@@ -1,25 +1,31 @@
-import React from 'react'
+import React from 'react';
 import "./assets/style.css";
+
 const Footer = () => {
   return (
     <footer className="footer">
-        <div className="footer-content">
-            <div className="footer-left">
-                <h3>savvy</h3>
-                <p>your one stop shop for all your need</p>
-            </div>
-            <div className="footer-links">
-                <a href="#">About us</a>
-                <a href="#">Contact us</a>
-                <a href="#">Terms of Services</a>
-                <a href="#">Privace Policy</a>
-            </div>
+      <div className="footer-content">
+        
+        <div className="footer-left">
+          <h3>Savvy</h3>
+          <p>Your one-stop shop for all your needs</p>
         </div>
-        <div className="footer-bottom">
-            <p>c 2023salesSavvy.All rights reserved</p>
-        </div>
-    </footer>
-  )
-}
 
-export default Footer
+        <div className="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a> 
+        </div>
+
+      </div>
+
+      <div className="footer-bottom">
+        <p>© 2023 SalesSavvy. All rights reserved.</p> 
+      </div>
+      
+    </footer>
+  );
+};
+
+export default Footer;

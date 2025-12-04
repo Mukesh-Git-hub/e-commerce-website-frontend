@@ -1,10 +1,11 @@
 import React from 'react'
 import { Routes,Route } from 'react-router-dom'
-import Registration from './src/Registration'
-import LoginPage from './src/LoginPage'
-import Footer from './src/Footer'
-import Header from './src/Header'
-import ProfileDropDown from './src/ProfileDropDown'
+import LoginPage from "./LoginPage";
+import Registration from "./Registration";
+import Header from "./Header";
+import Footer from "./Footer";
+import ProfileDropDown from "./ProfileDropDown";
+
 
 const AppRoutes = () => {
   return (
