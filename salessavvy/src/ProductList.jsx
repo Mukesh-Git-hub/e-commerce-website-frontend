@@ -6,7 +6,7 @@ const ProductList = ({ products, onAddToCart }) => {
       {products.map((product) => (
         <div key={product.product_id} className="product-card">
           <img
-            src={product.image[0]}
+            src={product.images[0]}
             alt={product.name}
             loading="lazy"
             onError={(e) => {

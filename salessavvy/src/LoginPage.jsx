@@ -16,24 +16,32 @@ try {
  const response = await fetch('http://localhost:9090/api/auth/login', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  credentials: 'include',
+  credentials: 'include',  
   body: JSON.stringify({ username, password })
 });
 
 
-const data=  await response.json();
 
- if(response.ok){
-    console.log('User logged in successfully:',data);
-   if(data.role === 'CUSTOMER'){
-    navigate('/customerhome');
-}
-else if(data.role === 'ADMIN'){
-    navigate('/adminhome');
+
+
+ if (response.ok) {
+  const data=  await response.json();
+    console.log("User logged in successfully:", data);
+
+   
+    if (data.token) {
+        localStorage.setItem("token", data.token);
+    }
+
+    if (data.role === "CUSTOMER") {
+        navigate("/customerhome");
+    } else if (data.role === "ADMIN") {
+        navigate("/adminhome");
+    } else {
+        throw new Error(data.error || "Login failed");
+    }
 }
 
-    else {throw new Error(data.error|| 'login failed');} 
- }
 
 
 }catch(err) {
